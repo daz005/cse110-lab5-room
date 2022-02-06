@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/person_detail_notes"
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_item_height"
     android:layout_marginLeft="@dimen/margin"
@@ -9,13 +8,13 @@
     android:gravity="center_vertical">
 
     <TextView
-        android:id="@+id/person_row_name"
+        android:id="@+id/notes_row_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16sp"
-        android:height="24sp"
-        android:lineHeight="16sp"
-        android:textSize="12sp"
+        android:height="32sp"
+        android:lineHeight="32sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        tools:text="@tools:sample/lorem" />
+        tools:text="@tools:sample/full_names"/>
 </FrameLayout>
