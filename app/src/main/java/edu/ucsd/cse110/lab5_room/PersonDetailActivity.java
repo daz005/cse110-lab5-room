@@ -63,7 +63,7 @@ public class PersonDetailActivity extends AppCompatActivity {
 
         int personId = person.getID();
 
-        TextView newNoteTextView = findViewById(R.id.new_note_textview);
+        TextView newNoteTextView = findViewById(R.id.editText_id);
         String newNoteText = newNoteTextView.getText().toString();
 
         Note newNote = new Note(newNotedId, personId, newNoteText);
