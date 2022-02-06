@@ -61,18 +61,22 @@ public class PersonDetailActivity extends AppCompatActivity {
 
     public void onAddNoteClicked(View view){
 
-        int newNotedId = ++ max_note_id;
-
         int personId = person.getID();
 
         TextView newNoteTextView = findViewById(R.id.editText_id);
         String newNoteText = newNoteTextView.getText().toString();
 
-        Note newNote = new Note(newNotedId, personId, newNoteText);
+        if(!newNoteText.isEmpty()) {
+            int newNotedId = ++max_note_id;
 
-        db.notesDao().insert(newNote);
+            Note newNote = new Note(newNotedId, personId, newNoteText);
 
-        notesViewAdapter.addNote(newNote);
+            db.notesDao().insert(newNote);
+
+            notesViewAdapter.addNote(newNote);
+
+            newNoteTextView.setText("");
+        }
 
     }
 

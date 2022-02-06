@@ -57,7 +57,6 @@
         android:ems="10"
         android:hint="add new notes here"
         android:inputType="date|textUri|textShortMessage|textLongMessage|textAutoCorrect|numberSigned|textVisiblePassword|textWebEditText|textMultiLine|textNoSuggestions|textFilter|number|datetime|textWebEmailAddress|textPersonName|text|textPhonetic|textCapSentences|textPassword|textAutoComplete|textImeMultiLine|textPostalAddress|numberDecimal|textEmailAddress|numberPassword|textCapWords|phone|textEmailSubject|textCapCharacters|time|textWebPassword"
-        android:text="Name"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
