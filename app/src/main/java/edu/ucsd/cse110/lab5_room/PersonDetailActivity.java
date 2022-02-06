@@ -48,7 +48,9 @@ public class PersonDetailActivity extends AppCompatActivity {
         notesLayoutManger = new LinearLayoutManager(this);
         notesRecyclerView.setLayoutManager(notesLayoutManger);
 
-        notesViewAdapter =  new NotesViewAdapter(notes);
+        notesViewAdapter =  new NotesViewAdapter(notes, (note)->{
+            db.notesDao().delete(note);
+        });
         notesRecyclerView.setAdapter(notesViewAdapter);
 
     }
