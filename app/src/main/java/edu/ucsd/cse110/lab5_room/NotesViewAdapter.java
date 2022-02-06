@@ -42,6 +42,13 @@ public class NotesViewAdapter extends RecyclerView.Adapter<NotesViewAdapter.View
 
 
 
+    public void addNote(Note note){
+
+        this.notes.add(note);
+        this.notifyItemChanged(this.notes.size()-1);
+    }
+
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView noteTextView;
         private Note note;

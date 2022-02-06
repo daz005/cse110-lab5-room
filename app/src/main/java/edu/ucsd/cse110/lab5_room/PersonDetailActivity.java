@@ -24,6 +24,7 @@ public class PersonDetailActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager notesLayoutManger;
     private NotesViewAdapter notesViewAdapter;
 
+    private static int max_note_id = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,8 @@ public class PersonDetailActivity extends AppCompatActivity {
         int personId = intent.getIntExtra("person_id", 0);
 
         db = AppDatabase.getSingleton(this);
+        max_note_id = db.notesDao().count();
+
         person = db.personsWithNotesDao().get(personId);
         List<Note>  notes = db.notesDao().getForPerson(personId);
 
@@ -53,4 +56,22 @@ public class PersonDetailActivity extends AppCompatActivity {
     public void onGoBackClicked(View view) {
         finish();
     }
+
+    public void onAddNoteClicked(View view){
+
+        int newNotedId = ++ max_note_id;
+
+        int personId = person.getID();
+
+        TextView newNoteTextView = findViewById(R.id.new_note_textview);
+        String newNoteText = newNoteTextView.getText().toString();
+
+        Note newNote = new Note(newNotedId, personId, newNoteText);
+
+        db.notesDao().insert(newNote);
+
+        notesViewAdapter.addNote(newNote);
+
+    }
+
 }
